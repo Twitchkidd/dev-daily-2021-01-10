@@ -1,6 +1,6 @@
 # Dev Daily 2021-01-10
 
-#### split() compare:
+#### slice() compare:
 
 ```javascript
 const checkDromeStatus = checkMe => {
