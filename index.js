@@ -8,16 +8,17 @@
 function palindromate(str) {
 	if (str.length < 2) return str;
 	const checkDromeStatus = checkMe => {
-		let first, second;
-		if (checkMe.length % 2 === 1) {
-			const midIndex = Math.floor(checkMe.length / 2);
-			first = checkMe.slice(0, midIndex + 1);
-			second = checkMe.slice(midIndex);
-		} else {
-			first = checkMe.slice(0, checkMe.length / 2);
-			second = checkMe.slice(checkMe.length / 2);
+		const midIndex =
+			checkMe.length % 2 === 1
+				? Math.floor(checkMe.length / 2)
+				: checkMe.length / 2;
+		let palindrome = true;
+		for (let i = 0; i < midIndex; i++) {
+			if (checkMe[i] !== checkMe[checkMe.length - (i + 1)]) {
+				palindrome = false;
+			}
 		}
-		return first === [...second].reverse().join('');
+		return palindrome;
 	};
 	let newStr = str;
 	for (let i = 0; i <= str.length && !checkDromeStatus(newStr); i++) {
