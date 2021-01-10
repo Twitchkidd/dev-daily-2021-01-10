@@ -41,7 +41,7 @@ function makeid(length) {
 }
 
 console.time('palindromate');
-console.log(palindromate(makeid(10000)));
+console.log(palindromate(makeid(100)));
 console.timeEnd('palindromate');
 
 module.exports = palindromate;
